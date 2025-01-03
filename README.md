@@ -1,4 +1,5 @@
-# ocr-box-editor-v2
+# ai-image-translation
+
 
 ## How to run by `docker-compose`
 ```
