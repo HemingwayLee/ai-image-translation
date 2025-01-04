@@ -23,7 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
     path('process/', views.processImage),
-    path('update/', views.updateBoxfile),
-    path('list/', views.listFiles),
-    path('page/list/', views.listPage),
+    path('inpaint/', views.doInpainting),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

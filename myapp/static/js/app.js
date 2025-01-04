@@ -46,6 +46,8 @@ $(document).ready(function(){
           success: function(data) {
             $("#msgBody").text(data.msg);
             $("#msgModal").modal("show");
+            
+            console.log(data.data);
 
             processFile(data.data);
           },
@@ -101,18 +103,17 @@ $(document).ready(function(){
       }
   });
   
-  function processFile(content){
+  function processFile(content) {
     var file = content;
     if (file && file.length) {  
       boxlayer.clearLayers();
       boxdata = [];
       
-      file.split("\n")
-          .forEach(function(line){
+      file.forEach(function(line){
             if (line.length > 5){
               var temp = line.split(" ");
               var symbole = {
-                text: temp[6].substr(1),
+                text: line.split('#')[1],
                 x1: parseInt(temp[1]),
                 y1: parseInt(temp[2]),
                 x2: parseInt(temp[3]),
@@ -458,7 +459,7 @@ $(document).ready(function(){
     $.ajax({
       type: 'POST',
       contentType: 'application/json; charset=utf-8',
-      url: 'http://127.0.0.1:8000/update/',
+      url: 'http://127.0.0.1:8000/inpaint/',
       dataType: 'json',
       data: JSON.stringify({
         filename: $('input[type=file]').val().split('\\').pop(),
