@@ -1,4 +1,13 @@
-Django==3.1.14  
+--find-links https://download.pytorch.org/whl/torch_stable.html
+
+torch==1.8.0+cpu
+torchvision==0.9.0+cpu
 opencv-python
+tqdm==4.60.0
+imageio==2.9.0
+imageio-ffmpeg
+pytorch_fid
+protobuf==3.20.*
+Django==3.1.14
 pytesseract
 
